@@ -7,3 +7,23 @@ attributes:
   repository: 'https://github.com/ws-skeleton/che-editor-jupyter/'
   title: Jupyter Notebook as Editor for Eclipse Che
   version: 5.7.0
+components:
+  - attributes:
+      ports:
+        - exposedPort: 8888
+    container:
+      endpoints:
+        - attributes:
+            type: main
+          exposure: public
+          name: jupyter
+          protocol: http
+          targetPort: 8888
+      env:
+        - name: JUPYTER_NOTEBOOK_DIR
+          value: /projects
+      image: 'docker.io/ksmster/che-editor-jupyter:5.7.0'
+      memoryLimit: 512M
+      mountSources: true
+      sourceMapping: /projects
+    name: jupyter-notebook
