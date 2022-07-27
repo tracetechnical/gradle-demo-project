@@ -1,7 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
   name: jupyter-lab
-  namespace: timur-developmentseed-org-che-cowq5k
 attributes:
   firstPublicationDate: '2019-02-05'
   publisher: ws-skeleton
